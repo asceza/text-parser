@@ -1,3 +1,6 @@
+
+#Этот скрипт удобно использовать для определения отсутствующих символов из text.txt в dict.txt
+
 dict_list = []
 text = ""
 
@@ -25,12 +28,10 @@ def get_data_from_text():
         text = text.replace("\t", "")
         l = l - len(text)
         print(f"Удаляем {l} символов табуляции")
-        len_text = len(text)
         get_count_of_each_sumbol(dict_list, text)
 
 
 def get_count_of_each_sumbol(dict_list, text):
-    local_len_text = 0
     for sumbol in dict_list:
         text = text.replace(sumbol, "")
     print(f"Эти символы остутствуют в файле dict.txt:\n{text}")
@@ -39,3 +40,4 @@ def get_count_of_each_sumbol(dict_list, text):
 if __name__ == "__main__":
     get_data_from_dict()
     get_data_from_text()
+
